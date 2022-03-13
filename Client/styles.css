@@ -248,3 +248,77 @@ body {
     font-size: var(--font-size);
     padding: 0.5rem;
 }
+
+.info-screen-container {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000077;
+    /* display: flex; */
+    display: none;
+}
+.info-screen {
+    width: 60rem;
+    background-color: #272830;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.info-screen-link {
+    color: #7272d4;
+    text-decoration: underline;
+}
+.info-screen-text {
+    font-size: var(--font-size);
+    color: var(--font-color-primary);
+}
+.info-screen-title {
+    font-size: var(--font-size);
+    color: var(--font-color-primary);
+    margin: 0.5rem;
+    width: calc(100% - 1rem);
+    padding: 0.5rem;
+}
+.info-screen-subtitle {
+    font-size: var(--small-font-size);
+    color: var(--font-color-secondary);
+    margin: 0.5rem;
+    width: calc(100% - 1rem);
+    padding: 0.5rem;
+}
+.info-screen-button {
+    background-color: #4550a1;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.info-screen-button:hover {
+    background-color: #5963ad;
+}
+.info-screen-button:active {
+    background-color: #3c3e4b;
+}
+
+.info-icon {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    fill: #a6a9d6;
+}

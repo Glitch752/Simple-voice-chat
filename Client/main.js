@@ -1,4 +1,5 @@
-const wsc = new WebSocket((window.location.protocol === "http:" ? "ws" : "wss") + "://" + window.location.host + "/ws/"); 
+const wsc = new WebSocket((window.location.protocol === "http:" ? "ws" : "wss") + "://" + window.location.host.split(':')[0] + "/ws/"); 
+// console.log((window.location.protocol === "http:" ? "ws" : "wss") + "://" + window.location.host.split(':')[0] + ":6170/");
 //.split(':')[0] is to take out the port section
 
 wsc.onopen = function() {
@@ -96,6 +97,20 @@ function createServer() {
 	wsc.send(JSON.stringify({
 		type: "createServer",
 	}));
+}
+
+function openInfo() {
+    var infoContainer = document.getElementById('infoScreenContainer');
+    if(infoContainer.style.display === "flex") {
+        infoContainer.style.display = "none";
+    } else {
+        infoContainer.style.display = "flex";
+    }
+}
+
+function closeInfo() {
+    var infoContainer = document.getElementById('infoScreenContainer');
+    infoContainer.style.display = "none";
 }
 
 function updateUsers() {
