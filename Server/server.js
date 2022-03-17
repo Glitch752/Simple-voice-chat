@@ -89,6 +89,15 @@ wss.on("connection", function(connection) {
                     }));
                 }
             }
+        } else if(messageData.type === "updateMuteDeafen") {
+            var server = servers[messageData.serverCode];
+            var client = server.clients.find(function(client) {
+                return client.ws === connection;
+            });
+            client.isMuted = messageData.isMuted;
+            client.isDeafened = messageData.isDeafened;
+
+            updateUsers(messageData.serverCode);
         }
 	});
     connection.on("close", function() {
