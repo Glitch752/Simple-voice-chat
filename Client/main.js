@@ -1,5 +1,5 @@
-const wsc = new WebSocket((window.location.protocol === "http:" ? "ws" : "wss") + "://" + window.location.host.split(':')[0] + "/ws/"); 
-// const wsc = new WebSocket((window.location.protocol === "http:" ? "ws" : "wss") + "://" + window.location.host.split(':')[0] + ":6170/");
+// const wsc = new WebSocket((window.location.protocol === "http:" ? "ws" : "wss") + "://" + window.location.host.split(':')[0] + "/ws/"); 
+const wsc = new WebSocket((window.location.protocol === "http:" ? "ws" : "wss") + "://" + window.location.host.split(':')[0] + ":6170/");
 //.split(':')[0] is to take out the port section
 
 wsc.onopen = function() {
@@ -217,8 +217,6 @@ function leaveCall() {
 		type: "leaveServer",
 		serverCode: currentServerCode,
 	}));
-
-	alert("You left " + currentServerCode);
 
 	currentServerCode = "";
 
