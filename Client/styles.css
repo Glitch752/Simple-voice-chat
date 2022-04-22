@@ -12,6 +12,8 @@
     --background-color: #20202e;
 
     --user-size: 10rem;
+
+    --focus-color: #8f1e1e;
 }
 
 body {
@@ -176,7 +178,13 @@ body {
 .join-button:active {
     background-color: #3c3e4b;
 }
+.join-button:focus-visible {
+    outline: 0.2rem solid var(--focus-color);
+}
 
+.ui-button:focus-visible {
+    outline: 0.2rem solid var(--focus-color);
+}
 
 .shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
